@@ -1,7 +1,7 @@
 ---
 title: Justin Napolitano
 ---
-# freight.jnapolitano.io 
+# energy.jnapolitano.io 
 :::{raw} html
 
     <hr style="height:2px;border-width:0;color:gray;background-color:gray">
@@ -25,7 +25,7 @@ parts/overview.md
 ```
 :::
 
-##  Natural Gas Power Plants
+##  US Power Plants Analysis
 
 :::{raw} html
 
@@ -35,7 +35,7 @@ parts/overview.md
 :::{card}
 
 ```{toctree}
-:caption: Overview
+:caption: Power Plants Analysis
 :maxdepth: 3
 
 parts/power_plants.ipynb
