@@ -79,7 +79,7 @@ nbsphinx_timeout = 100
 timeout= 10000
 execution_timeout = -1
 #jupyter_execute_notebooks = "auto"
-jupyter_execute_notebooks = "cache"
+jupyter_execute_notebooks = "auto"
 #Cautodoc Setup
 
 cautodoc_root = os.path.abspath("codebase/project-c-reference")
