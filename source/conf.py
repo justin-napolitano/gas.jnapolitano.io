@@ -30,7 +30,7 @@ project = 'Justin Napolitano'
 copyright = '2022, Justin Napolitano'
 author = 'Justin Napolitano'
 
-html_title = 'freight.jnapolitano.io'
+html_title = 'energy.jnapolitano.io'
 # The short X.Y version
 #version = ''
 # The full version, including alpha/beta/rc tags
