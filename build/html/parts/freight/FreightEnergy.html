@@ -1,0 +1,1148 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="United States Rail Freight Energy Usage" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="parts/freight/FreightEnergy.html" />
+  <meta property="og:description" content="Code Section: In order to create rigorous tools that will influence business decisions it is important to me to remain completely transparent. Every graph, table, and test will be easy to replicate..." />
+  
+    <title>United States Rail Freight Energy Usage &#8212; freight.jnapolitano.io</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../../_static/FAVICON.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="US Shipping Routes and Ports Analysis" href="Shipping.html" />
+    <link rel="prev" title="Rail Analysis" href="Rail.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../journal/posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   freight.jnapolitano.io
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   United States Freight Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Rail
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rail.html">
+   Rail Analysis
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   United States Rail Freight Energy Usage
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  US Shipping Routes and Ports
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Shipping.html">
+   US Shipping Routes and Ports Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  US Intermodal Shipping
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intermodal.html">
+   Intermodal Freight Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Freight Network Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="us_network.html">
+   US Logistics Network Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../contact/index.html">
+   Contact Justin Napolitano
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tables and Indices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/parts/freight/FreightEnergy.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/justin-napolitano/cv"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-section">
+   Code Section
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-statements">
+     Import Statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#returndata-class">
+     ReturnData Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-key-function">
+     read_key Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-data-function">
+     get_data Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-function">
+     Test Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-df-function">
+     plot_df Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getdata-function">
+     GetData Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getcarbondioxidedata-function">
+     GetCarbonDioxideData Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbonpipeline-function">
+     CarbonPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cppcarbonpipeline-function">
+     CPPCarbonPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getfuelefficiency-function">
+     GetFuelEfficiency Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficiencypipeline-function">
+     EfficiencyPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lngusagepipeline-function">
+     LNGUsagePipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freightrailusagepipeline-function">
+     FreightRailUsagePipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freightenergynocpppipeline-function">
+     FreightEnergyNoCPPPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tonmilespipeline-function">
+     TonMilesPipeline Function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-plots">
+   Data Plots
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbon-production-plot">
+     Carbon Production Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbon-dioxide-projections">
+     Carbon Dioxide Projections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freight-fuel-efficiency-projections">
+     Freight Fuel Efficiency Projections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lng-usage-and-projections">
+     LNG Usage and Projections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rail-freight-total-energy-use">
+     Rail Freight Total Energy Use
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#projected-energy-usage-without-carbon-protection-policies">
+     Projected Energy Usage without Carbon Protection Policies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ton-miles-projections">
+     Ton/Miles Projections
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>United States Rail Freight Energy Usage</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-section">
+   Code Section
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-statements">
+     Import Statements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#returndata-class">
+     ReturnData Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-key-function">
+     read_key Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-data-function">
+     get_data Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-function">
+     Test Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-df-function">
+     plot_df Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getdata-function">
+     GetData Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getcarbondioxidedata-function">
+     GetCarbonDioxideData Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbonpipeline-function">
+     CarbonPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cppcarbonpipeline-function">
+     CPPCarbonPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getfuelefficiency-function">
+     GetFuelEfficiency Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficiencypipeline-function">
+     EfficiencyPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lngusagepipeline-function">
+     LNGUsagePipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freightrailusagepipeline-function">
+     FreightRailUsagePipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freightenergynocpppipeline-function">
+     FreightEnergyNoCPPPipeline Function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tonmilespipeline-function">
+     TonMilesPipeline Function
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-plots">
+   Data Plots
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbon-production-plot">
+     Carbon Production Plot
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#carbon-dioxide-projections">
+     Carbon Dioxide Projections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freight-fuel-efficiency-projections">
+     Freight Fuel Efficiency Projections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lng-usage-and-projections">
+     LNG Usage and Projections
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rail-freight-total-energy-use">
+     Rail Freight Total Energy Use
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#projected-energy-usage-without-carbon-protection-policies">
+     Projected Energy Usage without Carbon Protection Policies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ton-miles-projections">
+     Ton/Miles Projections
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="united-states-rail-freight-energy-usage">
+<h1>United States Rail Freight Energy Usage<a class="headerlink" href="#united-states-rail-freight-energy-usage" title="Permalink to this headline">¶</a>
+</h1>
+<div class="section" id="code-section">
+<h2>Code Section<a class="headerlink" href="#code-section" title="Permalink to this headline">¶</a>
+</h2>
+<p>In order to create rigorous tools that will influence business decisions it is important to me to remain completely transparent.  Every graph, table, and test will be easy to replicate by running the code included with this document.</p>
+<div class="section" id="import-statements">
+<h3>Import Statements<a class="headerlink" href="#import-statements" title="Permalink to this headline">¶</a>
+</h3>
+<p>First import the libraries that will be used in this project.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nasdaqdatalink</span> <span class="k">as</span> <span class="nn">link</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="returndata-class">
+<h3>ReturnData Class<a class="headerlink" href="#returndata-class" title="Permalink to this headline">¶</a>
+</h3>
+<p>The ReturnData Class initializes an object that contains all of the information necesary to produce graphs and analyze data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ReturnData</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dataframe</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">ticker</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataframe</span> <span class="o">=</span> <span class="n">dataframe</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="n">unit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ticker</span> <span class="o">=</span> <span class="n">ticker</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xlabel</span> <span class="o">=</span> <span class="n">xlabel</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-key-function">
+<h3>read_key Function<a class="headerlink" href="#read-key-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>The read_key function imports an api key from file to enable this project to interact with the Nasdaq Data Link.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_key</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">link</span><span class="o">.</span><span class="n">read_key</span><span class="p">(</span><span class="s2">".key"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-data-function">
+<h3>get_data Function<a class="headerlink" href="#get-data-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>The get_data function calls the Nasdaq Data Link to request a data set dictionary according to a specified ticker(ie a data set title).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">ticker</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="test-function">
+<h3>Test Function<a class="headerlink" href="#test-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>The test function simply tests whether the api is functioning.  It returns a sample set of data for confirmation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="n">api_link</span> <span class="o">=</span> <span class="n">read_key</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">api_link</span><span class="p">:</span>
+        <span class="n">datalink</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF2016_EFI_NA_TRN_RAIL_NA_NA_NA_TONMLPTHBTU_A"</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">datalink</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">test</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate">
+<div class="highlight"><pre><span></span>               Value
+Date                
+2014-12-31  3.481205
+2015-12-31  3.506685
+2016-12-31  3.532352
+2017-12-31  3.558207
+2018-12-31  3.584251
+2019-12-31  3.610485
+2020-12-31  3.636912
+2021-12-31  3.663532
+2022-12-31  3.690347
+2023-12-31  3.717358
+2024-12-31  3.744567
+2025-12-31  3.771975
+2026-12-31  3.799583
+2027-12-31  3.827394
+2028-12-31  3.855408
+2029-12-31  3.883627
+2030-12-31  3.912053
+2031-12-31  3.940687
+2032-12-31  3.969530
+2033-12-31  3.998585
+2034-12-31  4.027852
+2035-12-31  4.057333
+2036-12-31  4.087031
+2037-12-31  4.116945
+2038-12-31  4.147079
+2039-12-31  4.177433
+2040-12-31  4.208009
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-df-function">
+<h3>plot_df Function<a class="headerlink" href="#plot-df-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>plot_df will plot a datframe object.  A ReturnObject as defined by the ReturnData class contains all necessary information to plot a graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_df</span><span class="p">(</span><span class="n">ReturnObject</span><span class="p">):</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'ggplot'</span><span class="p">)</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">ReturnObject</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">qx</span> <span class="o">=</span> <span class="n">ReturnObject</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">use_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">'Value'</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">'line'</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span><span class="n">ReturnObject</span><span class="o">.</span><span class="n">title</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">qx</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">ReturnObject</span><span class="o">.</span><span class="n">xlabel</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">qx</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ReturnObject</span><span class="o">.</span><span class="n">unit</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getdata-function">
+<h3>GetData Function<a class="headerlink" href="#getdata-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>The GetData function is an improved version of the previous get_data function.  It will request information by ticker.  Then, create a pandas dataframe to facillitate data manipulation and analysis. Finally it creates a ReturnObject by calling the ReturndData class.  ReturnObject is returned to the calling pipeline function to be manipulated and plotted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetData</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">ReturnObject</span> <span class="o">=</span> <span class="n">ReturnData</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">ticker</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="c1">#data.rename({'Value': unit}, axis=1, inplace=True)</span>
+    <span class="c1">#print('******Fuel Efficiency********')</span>
+    <span class="c1">#print(FuelEfficiencyObject.dataframe)</span>
+    <span class="c1">#print(FuelEfficiencyObject.unit)</span>
+    <span class="c1">#print(FuelEfficiencyObject.ticker)</span>
+    <span class="c1">#print(data)</span>
+    <span class="c1">#print(data.columns)</span>
+    <span class="k">return</span> <span class="n">ReturnObject</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getcarbondioxidedata-function">
+<h3>GetCarbonDioxideData Function<a class="headerlink" href="#getcarbondioxidedata-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>GetCarbonDioxide data is an obsolete function that needs to be uodated to the new logic presented below.  In its current state it requires ticker, unit, title, ..etc to be defined within this function.  A better implementation is to do this step within the pipeline function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetCarbonDioxideData</span><span class="p">():</span>
+        <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF2016_EMI_CO2_TRN_RLF_NA_NA_NA_MILLMETNCO2_A"</span>
+        <span class="n">unit</span> <span class="o">=</span> <span class="s2">"MMmt CO2"</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s2">"Department of Energy Freight Rail Carbon Production Projections"</span> 
+        <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Date"</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">ReturnObject</span> <span class="o">=</span> <span class="n">ReturnData</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">ticker</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+        
+        <span class="c1">#data.rename({'Value': unit}, axis=1, inplace=True)</span>
+        <span class="c1">#print('******Fuel Carbon Dioxide Production********')</span>
+        <span class="c1">#print(ReturnObject.dataframe)</span>
+        <span class="c1">#print(ReturnObject.unit)</span>
+        <span class="c1">#print(ReturnObject.ticker)</span>
+        <span class="c1">#print(data)</span>
+        <span class="c1">#print(data.columns)</span>
+        <span class="k">return</span> <span class="n">ReturnObject</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="carbonpipeline-function">
+<h3>CarbonPipeline Function<a class="headerlink" href="#carbonpipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>the CarbonPipeline Function creates the Carbon Dioxide usage reports by calling the GetCarbonDioxideData function and the plot_df utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">CarbonPipeline</span><span class="p">():</span>
+    <span class="n">CarbonObject</span> <span class="o">=</span> <span class="n">GetCarbonDioxideData</span><span class="p">()</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">CarbonObject</span><span class="p">)</span>
+    
+<span class="c1">#CarbonPipeline()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cppcarbonpipeline-function">
+<h3>CPPCarbonPipeline Function<a class="headerlink" href="#cppcarbonpipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>CPPCarbonPipeline is written with an improved logic to the CarbonPipeline function.  Attributes are set at the highest level instead of nesting the initialization within a secondary function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">CPPCarbonPipeline</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_CPPREPBASIC_EMI_CO2_TRN_RLF_NA_NA_NA_MILLMETNCO2_A"</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="s2">"MMmt CO2"</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">"CPP Carbon Dioxide Projections"</span> 
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Year"</span>
+    <span class="n">CPPCarbonObject</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">CPPCarbonObject</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getfuelefficiency-function">
+<h3>GetFuelEfficiency Function<a class="headerlink" href="#getfuelefficiency-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>GetFuelEfficiencyData is an obsolete function that needs to be uodated to the new logic presented below. In its current state it requires ticker, unit, title, ..etc to be defined within this function. A better implementation is to do this step within the pipeline function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetFuelEfficiencyData</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF2016_EFI_NA_TRN_RAIL_NA_NA_NA_TONMLPTHBTU_A"</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="s2">"ton miles/thousand"</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">"Freight Fuel Efficiency"</span> 
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Date"</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">ReturnObject</span> <span class="o">=</span> <span class="n">ReturnData</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">ticker</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+
+    <span class="c1">#data.rename({'Value': unit}, axis=1, inplace=True)</span>
+    <span class="c1">#print('******Fuel Efficiency********')</span>
+    <span class="c1">#print(FuelEfficiencyObject.dataframe)</span>
+    <span class="c1">#print(FuelEfficiencyObject.unit)</span>
+    <span class="c1">#print(FuelEfficiencyObject.ticker)</span>
+    <span class="c1">#print(data)</span>
+    <span class="c1">#print(data.columns)</span>
+    <span class="k">return</span> <span class="n">ReturnObject</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="efficiencypipeline-function">
+<h3>EfficiencyPipeline Function<a class="headerlink" href="#efficiencypipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>the Efficiency Function creates the Carbon Dioxide usage reports by calling the GetCarbonDioxideData function and the plot_df utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">EfficiencyPipeline</span><span class="p">():</span>
+    <span class="n">EfficiencyObject</span> <span class="o">=</span> <span class="n">GetFuelEfficiencyData</span><span class="p">()</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">EfficiencyObject</span><span class="p">)</span>
+    
+<span class="c1">#EfficiencyPipeline()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="lngusagepipeline-function">
+<h3>LNGUsagePipeline Function<a class="headerlink" href="#lngusagepipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>the LNGUsagePipeline  Function creates the LNG usage reports by calling the Get data function and the plot_df utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">LngUsagePipeline</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF2016_CNSM_NA_TRN_FRAIL_LNG_NA_NA_TRLBTU_A"</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="s2">"Trillions BTU"</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">"LNG Usage and Projections"</span> 
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Year"</span>
+    <span class="n">LNGObject</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">LNGObject</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="freightrailusagepipeline-function">
+<h3>FreightRailUsagePipeline Function<a class="headerlink" href="#freightrailusagepipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>the LNGUsagePipeline  Function creates the LNG usage reports by calling the Get data function and the plot_df utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">FreightRailUsagePipeline</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF2016_CNSM_NA_TRN_FRAIL_NA_NA_NA_TRLBTU_A"</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="s2">"Trillions BTU"</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">"Department of Energy Total Freight Energy Usage"</span> 
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Year"</span>
+    <span class="n">LNGObject</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">LNGObject</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="freightenergynocpppipeline-function">
+<h3>FreightEnergyNoCPPPipeline Function<a class="headerlink" href="#freightenergynocpppipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>The FreightEnergyNoCPPPipeline Function creates the Freight Energy; No CPP; usage reports by calling the Get data function and the plot_df utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">FreightEnergyNoCPPPipeline</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF_NO_CPP_CNSM_NA_TRN_RLF_USE_NA_NA_QBTU_A"</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="s2">"Quads"</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">"Transportation ; Energy Use by Mode ; Rail, Freight, No CPP, AEO2016"</span> 
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Year"</span>
+    <span class="n">LNGObject</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">LNGObject</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tonmilespipeline-function">
+<h3>TonMilesPipeline Function<a class="headerlink" href="#tonmilespipeline-function" title="Permalink to this headline">¶</a>
+</h3>
+<p>The TonMilesPipeline Function creates the Ton Miles usage reports by calling the Get data function and the plot_df utility function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">TonMilesPipeline</span><span class="p">():</span>
+    <span class="n">ticker</span> <span class="o">=</span> <span class="s2">"EIA/AEO_2016_REF2016_ECI_FTM_TRN_RAIL_NA_NA_NA_BLN_A"</span>
+    <span class="n">unit</span> <span class="o">=</span> <span class="s2">"Billions"</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">"Freight ; Railroads ; Ton Miles by Rail, Reference, AEO2016"</span> 
+    <span class="n">xlabel</span> <span class="o">=</span> <span class="s2">"Year"</span>
+    <span class="n">LNGObject</span> <span class="o">=</span> <span class="n">GetData</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">plotted</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">(</span><span class="n">LNGObject</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-plots">
+<h2>Data Plots<a class="headerlink" href="#data-plots" title="Permalink to this headline">¶</a>
+</h2>
+<p>The functions below plot data by calling the appropriate pipeline.</p>
+<p>It easy to add new reports to the project because the programs are written modularly.</p>
+<div class="section" id="carbon-production-plot">
+<span id="index-0"></span><h3>Carbon Production Plot<a class="headerlink" href="#carbon-production-plot" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">CarbonPipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_38_0.png" src="../../_images/FreightEnergy_38_0.png">
+</div>
+</div>
+</div>
+<div class="section" id="carbon-dioxide-projections">
+<span id="index-1"></span><h3>Carbon Dioxide Projections<a class="headerlink" href="#carbon-dioxide-projections" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">CPPCarbonPipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_41_0.png" src="../../_images/FreightEnergy_41_0.png">
+</div>
+</div>
+</div>
+<div class="section" id="freight-fuel-efficiency-projections">
+<span id="index-2"></span><h3>Freight Fuel Efficiency Projections<a class="headerlink" href="#freight-fuel-efficiency-projections" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">EfficiencyPipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_44_0.png" src="../../_images/FreightEnergy_44_0.png">
+</div>
+</div>
+</div>
+<div class="section" id="lng-usage-and-projections">
+<span id="index-3"></span><h3>LNG Usage and Projections<a class="headerlink" href="#lng-usage-and-projections" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">LngUsagePipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_47_0.png" src="../../_images/FreightEnergy_47_0.png">
+</div>
+</div>
+</div>
+<div class="section" id="rail-freight-total-energy-use">
+<span id="index-4"></span><h3>Rail Freight Total Energy Use<a class="headerlink" href="#rail-freight-total-energy-use" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">FreightRailUsagePipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_50_0.png" src="../../_images/FreightEnergy_50_0.png">
+</div>
+</div>
+</div>
+<div class="section" id="projected-energy-usage-without-carbon-protection-policies">
+<span id="index-5"></span><h3>Projected Energy Usage without Carbon Protection Policies<a class="headerlink" href="#projected-energy-usage-without-carbon-protection-policies" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">FreightEnergyNoCPPPipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_53_0.png" src="../../_images/FreightEnergy_53_0.png">
+</div>
+</div>
+</div>
+<div class="section" id="ton-miles-projections">
+<span id="index-6"></span><h3>Ton/Miles Projections<a class="headerlink" href="#ton-miles-projections" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">TonMilesPipeline</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/FreightEnergy_56_0.png" src="../../_images/FreightEnergy_56_0.png">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./parts/freight"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    
+<script>kernelName = 'python3'</script>
+
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Rail.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Rail Analysis</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Shipping.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">US Shipping Routes and Ports Analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Justin Napolitano<br/>
+    
+        &copy; Copyright 2022, Justin Napolitano.<br/>
+      Last updated on Apr 04, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

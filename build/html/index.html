@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="freight.jnapolitano.io" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="index.html" />
+  <meta property="og:description" content="Overview: Overview: United States Freight Overview- Motivation, Take Aways- Shipping, Rail... Rail Freight: Rail: Rail Analysis- Rail Line Dataset Analysis- Loading the Rail Line Data, Checking Coo..." />
+  
+    <title>freight.jnapolitano.io &#8212; freight.jnapolitano.io</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="_static/FAVICON.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="United States Freight Overview" href="parts/freight/overview.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="parts/journal/posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 current">
+  <a class="reference internal" href="#">
+   freight.jnapolitano.io
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/freight/overview.html">
+   United States Freight Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Rail
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/freight/Rail.html">
+   Rail Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/freight/FreightEnergy.html">
+   United States Rail Freight Energy Usage
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  US Shipping Routes and Ports
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/freight/Shipping.html">
+   US Shipping Routes and Ports Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  US Intermodal Shipping
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/freight/intermodal.html">
+   Intermodal Freight Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Freight Network Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/freight/us_network.html">
+   US Logistics Network Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="parts/contact/index.html">
+   Contact Justin Napolitano
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tables and Indices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/justin-napolitano/cv"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rail-freight">
+   Rail Freight
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shipping">
+   Shipping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intermodal-freight">
+   Intermodal Freight
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#freight-network-analysis">
+   Freight Network Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contact">
+   Contact
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables-and-indices">
+   Tables and Indices
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>freight.jnapolitano.io</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rail-freight">
+   Rail Freight
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shipping">
+   Shipping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intermodal-freight">
+   Intermodal Freight
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#freight-network-analysis">
+   Freight Network Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contact">
+   Contact
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tables-and-indices">
+   Tables and Indices
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="freight-jnapolitano-io">
+<h1>freight.jnapolitano.io<a class="headerlink" href="#freight-jnapolitano-io" title="Permalink to this headline">¶</a>
+</h1>
+    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="parts/freight/overview.html">United States Freight Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parts/freight/overview.html#motivation">Motivation</a></li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/overview.html#take-aways">Take Aways</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/overview.html#shipping">Shipping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/overview.html#rail">Rail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="rail-freight">
+<h2>Rail Freight<a class="headerlink" href="#rail-freight" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Rail</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="parts/freight/Rail.html">Rail Analysis</a><ul>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/Rail.html#rail-line-dataset-analysis">Rail Line Dataset Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#loading-the-rail-line-data">Loading the Rail Line Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#checking-cooridindate-system">Checking Cooridindate System.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#converting-to-epsg-3857-system">Converting to EPSG 3857 System</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/Rail.html#rail-lines-in-us-canada-mexico-map">Rail Lines in US, Canada, Mexico Map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#data-fields">Data Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/Rail.html#texas-rail-lines-data">Texas Rail Lines Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#filtering-the-data-set-for-texas-state-lines">Filtering the data set for Texas state Lines.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#texas-non-interactive-map">Texas Non-Interactive Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Rail.html#texas-rail-map-interactive-map">Texas Rail Map Interactive Map.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1">
+<a class="reference internal" href="parts/freight/FreightEnergy.html">United States Rail Freight Energy Usage</a><ul>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/FreightEnergy.html#code-section">Code Section</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#import-statements">Import Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#returndata-class">ReturnData Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#read-key-function">read_key Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#get-data-function">get_data Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#test-function">Test Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#plot-df-function">plot_df Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#getdata-function">GetData Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#getcarbondioxidedata-function">GetCarbonDioxideData Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#carbonpipeline-function">CarbonPipeline Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#cppcarbonpipeline-function">CPPCarbonPipeline Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#getfuelefficiency-function">GetFuelEfficiency Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#efficiencypipeline-function">EfficiencyPipeline Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#lngusagepipeline-function">LNGUsagePipeline Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#freightrailusagepipeline-function">FreightRailUsagePipeline Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#freightenergynocpppipeline-function">FreightEnergyNoCPPPipeline Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#tonmilespipeline-function">TonMilesPipeline Function</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/FreightEnergy.html#data-plots">Data Plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#carbon-production-plot">Carbon Production Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#carbon-dioxide-projections">Carbon Dioxide Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#freight-fuel-efficiency-projections">Freight Fuel Efficiency Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#lng-usage-and-projections">LNG Usage and Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#rail-freight-total-energy-use">Rail Freight Total Energy Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#projected-energy-usage-without-carbon-protection-policies">Projected Energy Usage without Carbon Protection Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/FreightEnergy.html#ton-miles-projections">Ton/Miles Projections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="shipping">
+<h2>Shipping<a class="headerlink" href="#shipping" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">US Shipping Routes and Ports</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="parts/freight/Shipping.html">US Shipping Routes and Ports Analysis</a><ul>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/Shipping.html#data">Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#checking-cooridindate-system">Checking Cooridindate System.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#impressions">Impressions</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/Shipping.html#us-ports-data-set">US Ports Data Set</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#id1">Impressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#us-ports-map">US Ports Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/Shipping.html#major-us-ports-data-set">Major US Ports Data Set</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#id3">Impressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/Shipping.html#major-us-ports-map">Major Us Ports Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="intermodal-freight">
+<h2>Intermodal Freight<a class="headerlink" href="#intermodal-freight" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">US Intermodal Shipping</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="parts/freight/intermodal.html">Intermodal Freight Analysis</a><ul>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/intermodal.html#air-to-truck-facilities-data">Air to Truck Facilities Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/intermodal.html#air-to-truck-facility-map">Air to Truck Facility Map</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/intermodal.html#intermodal-freight-marine-role-on-role-off-data">Intermodal Freight Marine Role On/Role Off Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/intermodal.html#marine-roll-on-role-off-map">Marine Roll on/Role Off Map</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/intermodal.html#intermodal-rail-freight-stations-data">Intermodal Rail Freight Stations Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/intermodal.html#data-source">Data Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/intermodal.html#data-values">Data Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/intermodal.html#rail-freight-stations-map">Rail Freight Stations Map</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/intermodal.html#conclusions">Conclusions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/intermodal.html#regulatory-considerations">Regulatory Considerations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="freight-network-analysis">
+<h2>Freight Network Analysis<a class="headerlink" href="#freight-network-analysis" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Freight Network Analysis</span></p>
+<ul>
+<li class="toctree-l1">
+<a class="reference internal" href="parts/freight/us_network.html">US Logistics Network Analysis</a><ul>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/us_network.html#rail-facilities-by-nearest-ports">Rail Facilities by Nearest Ports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#intermodal-rail-data">Intermodal Rail Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#major-ports-data">Major Ports Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#intermodal-rail-stations-joined-by-nearest-major-port">Intermodal Rail Stations Joined by Nearest Major Port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#rail-facilities-by-port-interactive-map">Rail Facilities by Port Interactive Map</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/us_network.html#air-freight-to-truck-facilites-by-major-port">Air Freight to Truck Facilites by Major Port</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#air-freight-hubs-joined-by-major-ports">Air Freight Hubs joined by Major Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#air-freight-hubs-by-nearest-major-port-port-map">Air Freight Hubs by Nearest Major Port Port Map</a></li>
+</ul>
+</li>
+<li class="toctree-l2">
+<a class="reference internal" href="parts/freight/us_network.html#shipping-networks">Shipping Networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#shipping-data">Shipping Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#shipping-networks-by-major-ports">Shipping Networks by Major Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parts/freight/us_network.html#shipping-routes-by-major-port-interactive-map">Shipping Routes by Major Port Interactive Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contact</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="parts/contact/index.html">Contact Justin Napolitano</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tables-and-indices">
+<h2>Tables and Indices<a class="headerlink" href="#tables-and-indices" title="Permalink to this headline">¶</a>
+</h2>
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tables and Indices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    
+<script>kernelName = 'python3'</script>
+
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="parts/freight/overview.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">United States Freight Overview</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Justin Napolitano<br/>
+    
+        &copy; Copyright 2022, Justin Napolitano.<br/>
+      Last updated on Apr 04, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
