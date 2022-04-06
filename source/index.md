@@ -25,7 +25,7 @@ parts/overview.md
 ```
 :::
 
-##  US Power Plants Analysis
+##  US Power Plants Overview
 
 :::{raw} html
 
@@ -35,13 +35,29 @@ parts/overview.md
 :::{card}
 
 ```{toctree}
-:caption: Power Plants Analysis
+:caption: Power Plants Overview
 :maxdepth: 3
 
 parts/power_plants.ipynb
 ```
 :::
 
+## US Natural Gas Network Overview
+
+:::{raw} html
+
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+:::
+
+:::{card}
+
+```{toctree}
+:caption: Natural Gas Overview
+:maxdepth: 3
+
+parts/natural_gas.ipynb
+```
+:::
 
 
 ## Contact
