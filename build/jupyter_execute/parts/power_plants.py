@@ -197,18 +197,6 @@ coal_heat_layer.add_to(coal_density_map)
 coal_density_map
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
 # ## Solar Plants
 
 # ### Identifying the Solar Plants in the Dataset
@@ -277,17 +265,9 @@ solar_heat_layer.add_to(solar_density_map)
 solar_density_map
 
 
-# In[ ]:
-
-
-
-
-
-# 
-
 # ## Wind Plants
 
-# ### Identifying the Coal Plants in the Dataset
+# ### Identifying the Wind Plants in the Dataset
 
 # In[14]:
 
@@ -433,14 +413,6 @@ hydro_heat_layer.add_to(hydro_density_map)
 hydro_density_map
 
 
-# In[ ]:
-
-
-
-
-
-# 
-
 # ## Nuclear Plants
 
 # ### Identifying the Nuclear Plants in the Dataset
@@ -507,10 +479,4 @@ nuclear_heat_layer = plugins.HeatMap(data = nuclear_heat_data, show=True)
 nuclear_heat_layer.add_to(nuclear_density_map)
 
 nuclear_density_map
-
-
-# In[ ]:
-
-
-
 
