@@ -73,9 +73,9 @@ parts/natural_gas.ipynb
 :caption: Carbon Storage Facilities
 :maxdepth: 3
 
-parts/natural_gas.ipynb
 parts/non-active-wells.ipynb
 parts/port-wells.ipynb
+parts/wells_near_pipelines.ipynb
 ```
 :::
 
