@@ -60,6 +60,26 @@ parts/natural_gas.ipynb
 :::
 
 
+## Carbon Storage Facilities
+
+:::{raw} html
+
+    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+:::
+
+:::{card}
+
+```{toctree}
+:caption: Carbon Storage Facilities
+:maxdepth: 3
+
+parts/non-active-wells.ipynb
+parts/port-wells.ipynb
+parts/wells_near_pipelines.ipynb
+```
+:::
+
+
 ## Contact
 
 :::{raw} html

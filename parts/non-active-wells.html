@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:title" content="Identifying Potential Carbon Storage Facilities" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="parts/non-active-wells.html" />
+  <meta property="og:description" content="Import and Procedural Functions: Plot Status Box Plot: Encode Dataframe to Categorical Variables: Sorting Data by Category: Creating Category Table: Dropping Categories from the Data Frame: Active ..." />
+  
+    <title>Identifying Potential Carbon Storage Facilities &#8212; energy.jnapolitano.io</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/FAVICON.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Identifying Potential Carbon Storage Facilities Near Import/Export Ports" href="port-wells.html" />
+    <link rel="prev" title="US Natural Gas Network Overview" href="natural_gas.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="journal/posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   energy.jnapolitano.io
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="overview.html">
+   US Natural Gas Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Power Plants Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="power_plants.html">
+   US Power Plants Meta Analysis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Natural Gas Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="natural_gas.html">
+   US Natural Gas Network Overview
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Carbon Storage Facilities
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Identifying Potential Carbon Storage Facilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="port-wells.html">
+   Identifying Potential Carbon Storage Facilities Near Import/Export Ports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wells_near_pipelines.html">
+   Identifying Wells Near Pipelines
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contact
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contact/index.html">
+   Contact Justin Napolitano
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tables and Indices
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../genindex.html">
+   Index
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/parts/non-active-wells.ipynb.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/justin-napolitano/cv"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-and-procedural-functions">
+   Import and Procedural Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-status-box-plot">
+   Plot Status Box Plot
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encode-dataframe-to-categorical-variables">
+     Encode Dataframe to Categorical Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-data-by-category">
+     Sorting Data by Category
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-category-table">
+     Creating Category Table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-categories-from-the-data-frame">
+     Dropping Categories from the Data Frame
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#active-well">
+       Active Well
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#producing-well">
+       Producing Well
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#producing-non-active-well">
+       PRODUCING, NON_ACTIVE WEll
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unknown-well">
+       Unknown Well
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#well-development">
+       Well Development
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-filtered-df-to-csv">
+     Writing filtered DF to CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Identifying Potential Carbon Storage Facilities</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-and-procedural-functions">
+   Import and Procedural Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-status-box-plot">
+   Plot Status Box Plot
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encode-dataframe-to-categorical-variables">
+     Encode Dataframe to Categorical Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-data-by-category">
+     Sorting Data by Category
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-category-table">
+     Creating Category Table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-categories-from-the-data-frame">
+     Dropping Categories from the Data Frame
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#active-well">
+       Active Well
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#producing-well">
+       Producing Well
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#producing-non-active-well">
+       PRODUCING, NON_ACTIVE WEll
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unknown-well">
+       Unknown Well
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#well-development">
+       Well Development
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-filtered-df-to-csv">
+     Writing filtered DF to CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="identifying-potential-carbon-storage-facilities">
+<h1>Identifying Potential Carbon Storage Facilities<a class="headerlink" href="#identifying-potential-carbon-storage-facilities" title="Permalink to this headline">¶</a>
+</h1>
+<div class="section" id="import-and-procedural-functions">
+<h2>Import and Procedural Functions<a class="headerlink" href="#import-and-procedural-functions" title="Permalink to this headline">¶</a>
+</h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">folium</span>
+<span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+<span class="kn">import</span> <span class="nn">rtree</span>
+<span class="kn">from</span> <span class="nn">zlib</span> <span class="kn">import</span> <span class="n">crc32</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">LineString</span><span class="p">,</span> <span class="n">Polygon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate">
+<div class="highlight"><pre><span></span>/Users/jnapolitano/venvs/sphinx-build/lib/python3.9/site-packages/geopandas/_compat.py:111: UserWarning: The Shapely GEOS version (3.10.2-CAPI-1.16.0) is incompatible with the GEOS version PyGEOS was compiled with (3.10.1-CAPI-1.16.0). Conversions between both will be slow.
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="c1">## Importing our DataFrames</span>
+
+<span class="n">gisfilepath</span> <span class="o">=</span> <span class="s2">"/Users/jnapolitano/Projects/data/energy/Oil_and_Natural_Gas_Wells.geojson"</span>
+
+
+<span class="n">fields_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gisfilepath</span><span class="p">)</span>
+
+<span class="c1">#fields_df = fields_df.to_crs(epsg=3857)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-status-box-plot">
+<h2>Plot Status Box Plot<a class="headerlink" href="#plot-status-box-plot" title="Permalink to this headline">¶</a>
+</h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">STATUS</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">'bar'</span><span class="p">)</span>
+<span class="c1">#data['title'].value_counts()[:20].plot(kind='barh')</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate">
+<div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/non-active-wells_5_1.png" src="../_images/non-active-wells_5_1.png">
+</div>
+</div>
+<div class="section" id="encode-dataframe-to-categorical-variables">
+<h3>Encode Dataframe to Categorical Variables<a class="headerlink" href="#encode-dataframe-to-categorical-variables" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="c1">#Casting to Category</span>
+
+<span class="n">fields_df</span><span class="p">[</span><span class="s2">"STATUS"</span><span class="p">]</span> <span class="o">=</span> <span class="n">fields_df</span><span class="p">[</span><span class="s2">"STATUS"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'category'</span><span class="p">)</span>
+
+<span class="c1">#Creating Cat Column </span>
+<span class="n">fields_df</span><span class="p">[</span><span class="s2">"STAUTS_CAT"</span><span class="p">]</span> <span class="o">=</span> <span class="n">fields_df</span><span class="p">[</span><span class="s2">"STATUS"</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span>
+<span class="n">fields_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>OBJECTID</th>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>STATE</th>
+      <th>TYPE</th>
+      <th>STATUS</th>
+      <th>COUNTY</th>
+      <th>COUNTYFIPS</th>
+      <th>COUNTRY</th>
+      <th>LATITUDE</th>
+      <th>...</th>
+      <th>SURF_LAT</th>
+      <th>SURF_LONG</th>
+      <th>BOT_LAT</th>
+      <th>BOT_LONG</th>
+      <th>POSREL</th>
+      <th>FIELD</th>
+      <th>COMPDATE</th>
+      <th>TOTDEPTH</th>
+      <th>geometry</th>
+      <th>STAUTS_CAT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>W220000001</td>
+      <td>RRBB NAB PXY RA SU;J L SCALES</td>
+      <td>LA</td>
+      <td>OIL &amp; NATURAL GAS WELL</td>
+      <td>NON-ACTIVE WELL</td>
+      <td>DE SOTO</td>
+      <td>22031</td>
+      <td>USA</td>
+      <td>32.06496</td>
+      <td>...</td>
+      <td>32.06496</td>
+      <td>-93.55748</td>
+      <td>-999.0</td>
+      <td>-999.0</td>
+      <td>THIRD PARTY</td>
+      <td>RED RIVER-BULL BAYOU</td>
+      <td>1951-04-09T00:00:00+00:00</td>
+      <td>-999.0</td>
+      <td>POINT (-93.55748 32.06496)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>W220000002</td>
+      <td>P SUHH;J B BARR 28</td>
+      <td>LA</td>
+      <td>OIL &amp; NATURAL GAS WELL</td>
+      <td>NON-ACTIVE WELL</td>
+      <td>DE SOTO</td>
+      <td>22031</td>
+      <td>USA</td>
+      <td>32.08437</td>
+      <td>...</td>
+      <td>32.08437</td>
+      <td>-93.90817</td>
+      <td>-999.0</td>
+      <td>-999.0</td>
+      <td>THIRD PARTY</td>
+      <td>BETHANY LONGSTREET</td>
+      <td>2004-06-19T00:00:00+00:00</td>
+      <td>-999.0</td>
+      <td>POINT (-93.90817 32.08437)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>W220000003</td>
+      <td>HOSS RB SUA;POLAND</td>
+      <td>LA</td>
+      <td>OIL &amp; NATURAL GAS WELL</td>
+      <td>NON-ACTIVE WELL</td>
+      <td>LINCOLN</td>
+      <td>22061</td>
+      <td>USA</td>
+      <td>32.65100</td>
+      <td>...</td>
+      <td>32.65100</td>
+      <td>-92.74102</td>
+      <td>-999.0</td>
+      <td>-999.0</td>
+      <td>THIRD PARTY</td>
+      <td>HICO-KNOWLES</td>
+      <td>2004-07-28T00:00:00+00:00</td>
+      <td>-999.0</td>
+      <td>POINT (-92.74102 32.65100)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>W220000004</td>
+      <td>LODWICK LUMBER COMPANY</td>
+      <td>LA</td>
+      <td>OIL &amp; NATURAL GAS WELL</td>
+      <td>NON-ACTIVE WELL</td>
+      <td>BOSSIER</td>
+      <td>22015</td>
+      <td>USA</td>
+      <td>32.60635</td>
+      <td>...</td>
+      <td>32.60635</td>
+      <td>-93.47957</td>
+      <td>-999.0</td>
+      <td>-999.0</td>
+      <td>THIRD PARTY</td>
+      <td>BELLEVUE</td>
+      <td>1949-06-09T00:00:00+00:00</td>
+      <td>-999.0</td>
+      <td>POINT (-93.47957 32.60635)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>W220000005</td>
+      <td>SL 1367</td>
+      <td>LA</td>
+      <td>OIL &amp; NATURAL GAS WELL</td>
+      <td>NON-ACTIVE WELL</td>
+      <td>LAFOURCHE</td>
+      <td>22057</td>
+      <td>USA</td>
+      <td>29.06883</td>
+      <td>...</td>
+      <td>29.06883</td>
+      <td>-90.17218</td>
+      <td>-999.0</td>
+      <td>-999.0</td>
+      <td>THIRD PARTY</td>
+      <td>BAY MARCHAND BLOCK 2 OFFSHORE</td>
+      <td>1950-10-05T00:00:00+00:00</td>
+      <td>-999.0</td>
+      <td>POINT (-90.17218 29.06883)</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 35 columns</p>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting-data-by-category">
+<h3>Sorting Data by Category<a class="headerlink" href="#sorting-data-by-category" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span> <span class="o">=</span> <span class="n">fields_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">'STAUTS_CAT'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-category-table">
+<h3>Creating Category Table<a class="headerlink" href="#creating-category-table" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="c1"># Creating a Dictionary of Categories</span>
+<span class="n">cat_dict</span> <span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">fields_df</span><span class="p">[</span><span class="s1">'STATUS'</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">))</span> 
+
+<span class="c1"># Creating a Dataframe for references</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">cat_dict</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'Category'</span><span class="p">],</span> <span class="n">orient</span><span class="o">=</span><span class="s1">'index'</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">style</span>
+
+<span class="c1"># {0: 'bad', 1: 'good', 2: 'great'}</span>
+<span class="c1">#grp = fields_df.groupby('STAUTS_CAT')['STATUS'].aggregate(lambda x: print(x))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style type="text/css">
+</style>
+<table id="T_4d778">
+  <thead>
+    <tr>
+      <th class="blank level0"> </th>
+      <th id="T_4d778_level0_col0" class="col_heading level0 col0">Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_4d778_level0_row0" class="row_heading level0 row0">0</th>
+      <td id="T_4d778_row0_col0" class="data row0 col0">ACTIVE WELL</td>
+    </tr>
+    <tr>
+      <th id="T_4d778_level0_row1" class="row_heading level0 row1">1</th>
+      <td id="T_4d778_row1_col0" class="data row1 col0">NON-ACTIVE WELL</td>
+    </tr>
+    <tr>
+      <th id="T_4d778_level0_row2" class="row_heading level0 row2">2</th>
+      <td id="T_4d778_row2_col0" class="data row2 col0">PRODUCING WELL</td>
+    </tr>
+    <tr>
+      <th id="T_4d778_level0_row3" class="row_heading level0 row3">3</th>
+      <td id="T_4d778_row3_col0" class="data row3 col0">PRODUCING, NON-ACTIVE WELL</td>
+    </tr>
+    <tr>
+      <th id="T_4d778_level0_row4" class="row_heading level0 row4">4</th>
+      <td id="T_4d778_row4_col0" class="data row4 col0">STORAGE WELL/MAINTENANCE WELL/OBSERVATION WELL</td>
+    </tr>
+    <tr>
+      <th id="T_4d778_level0_row5" class="row_heading level0 row5">5</th>
+      <td id="T_4d778_row5_col0" class="data row5 col0">UNKNOWN WELL</td>
+    </tr>
+    <tr>
+      <th id="T_4d778_level0_row6" class="row_heading level0 row6">6</th>
+      <td id="T_4d778_row6_col0" class="data row6 col0">WELL DEVELOPMENT</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dropping-categories-from-the-data-frame">
+<h3>Dropping Categories from the Data Frame<a class="headerlink" href="#dropping-categories-from-the-data-frame" title="Permalink to this headline">¶</a>
+</h3>
+<div class="section" id="active-well">
+<h4>Active Well<a class="headerlink" href="#active-well" title="Permalink to this headline">¶</a>
+</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">fields_df</span><span class="p">[</span><span class="n">fields_df</span><span class="p">[</span><span class="s1">'STAUTS_CAT'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="producing-well">
+<h4>Producing Well<a class="headerlink" href="#producing-well" title="Permalink to this headline">¶</a>
+</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">fields_df</span><span class="p">[</span><span class="n">fields_df</span><span class="p">[</span><span class="s1">'STAUTS_CAT'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="producing-non-active-well">
+<h4>PRODUCING, NON_ACTIVE WEll<a class="headerlink" href="#producing-non-active-well" title="Permalink to this headline">¶</a>
+</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">fields_df</span><span class="p">[</span><span class="n">fields_df</span><span class="p">[</span><span class="s1">'STAUTS_CAT'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unknown-well">
+<h4>Unknown Well<a class="headerlink" href="#unknown-well" title="Permalink to this headline">¶</a>
+</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">fields_df</span><span class="p">[</span><span class="n">fields_df</span><span class="p">[</span><span class="s1">'STAUTS_CAT'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="well-development">
+<h4>Well Development<a class="headerlink" href="#well-development" title="Permalink to this headline">¶</a>
+</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">fields_df</span><span class="p">[</span><span class="n">fields_df</span><span class="p">[</span><span class="s1">'STAUTS_CAT'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="writing-filtered-df-to-csv">
+<h3>Writing filtered DF to CSV<a class="headerlink" href="#writing-filtered-df-to-csv" title="Permalink to this headline">¶</a>
+</h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">fields_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fields_df</span><span class="p">[</span><span class="s2">"STATUS"</span><span class="p">]</span> <span class="o">=</span> <span class="n">fields_df</span><span class="p">[</span><span class="s2">"STATUS"</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'string'</span><span class="p">)</span>
+<span class="n">fields_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"/Users/jnapolitano/Projects/data/energy/non-active-wells.csv"</span><span class="p">)</span>
+<span class="n">fields_df</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">'/Users/jnapolitano/Projects/data/energy/non-active-wells.geojson'</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">'GeoJSON'</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate">
+<div class="highlight"><pre><span></span>/Users/jnapolitano/venvs/sphinx-build/lib/python3.9/site-packages/geopandas/io/file.py:362: FutureWarning: pandas.Int64Index is deprecated and will be removed from pandas in a future version. Use pandas.Index with the appropriate dtype instead.
+  pd.Int64Index,
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./parts"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    
+<script>kernelName = 'python3'</script>
+
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="natural_gas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">US Natural Gas Network Overview</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="port-wells.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Identifying Potential Carbon Storage Facilities Near Import/Export Ports</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Justin Napolitano<br/>
+    
+        &copy; Copyright 2022, Justin Napolitano.<br/>
+      Last updated on Apr 07, 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
