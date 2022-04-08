@@ -8,22 +8,6 @@ title: Justin Napolitano
 :::
 
 
-## Overview
-
-:::{raw} html
-
-    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
-:::
-
-:::{card}
-
-```{toctree}
-:caption: Overview
-:maxdepth: 3
-
-parts/overview.md
-```
-:::
 
 ##  US Power Plants Overview
 
@@ -65,6 +49,7 @@ parts/gas-fields
 parts/natural-gas-facilities
 parts/natural-gas-pipelines
 parts/natural-gas-market-hubs
+parts/market-pipelines.ipynb
 
 ```
 :::
