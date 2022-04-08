@@ -17,7 +17,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-cx.add_basemap(combined_map, zoom=8)
+cx.add_basemap(combined_map, zoom=7)
 
 ------------------
 
@@ -85,7 +85,7 @@ File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connection.py:18
 [1;32m    188[0m     )
 [1;32m    190[0m [38;5;28;01mreturn[39;00m conn
 
-[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x1365b3d90>: Failed to establish a new connection: [Errno 60] Operation timed out
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out
 
 During handling of the above exception, another exception occurred:
 
@@ -119,13 +119,13 @@ File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/retry.py:59
 [0;32m--> 592[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, error [38;5;129;01mor[39;00m ResponseError(cause))
 [1;32m    594[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
 
-[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/8/35/81.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1365b3d90>: Failed to establish a new connection: [Errno 60] Operation timed out'))
+[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out'))
 
 During handling of the above exception, another exception occurred:
 
 [0;31mConnectionError[0m                           Traceback (most recent call last)
 Input [0;32mIn [16][0m, in [0;36m<cell line: 1>[0;34m()[0m
-[0;32m----> 1[0m [43mcx[49m[38;5;241;43m.[39;49m[43madd_basemap[49m[43m([49m[43mcombined_map[49m[43m,[49m[43m [49m[43mzoom[49m[38;5;241;43m=[39;49m[38;5;241;43m8[39;49m[43m)[49m
+[0;32m----> 1[0m [43mcx[49m[38;5;241;43m.[39;49m[43madd_basemap[49m[43m([49m[43mcombined_map[49m[43m,[49m[43m [49m[43mzoom[49m[38;5;241;43m=[39;49m[38;5;241;43m7[39;49m[43m)[49m
 
 File [0;32m~/venvs/finance/lib/python3.9/site-packages/contextily/plotting.py:121[0m, in [0;36madd_basemap[0;34m(ax, zoom, source, interpolation, attribution, attribution_size, reset_extent, crs, resampling, **extra_imshow_args)[0m
 [1;32m    117[0m     left, right, bottom, top [38;5;241m=[39m _reproj_bb(
@@ -226,6 +226,6 @@ File [0;32m~/venvs/finance/lib/python3.9/site-packages/requests/adapters.py:519
 [1;32m    521[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
 [1;32m    522[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
 
-[0;31mConnectionError[0m: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/8/35/81.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1365b3d90>: Failed to establish a new connection: [Errno 60] Operation timed out'))
-ConnectionError: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/8/35/81.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1365b3d90>: Failed to establish a new connection: [Errno 60] Operation timed out'))
+[0;31mConnectionError[0m: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out'))
+ConnectionError: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out'))
 

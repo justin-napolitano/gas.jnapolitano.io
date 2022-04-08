@@ -1300,7 +1300,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate">
-<div class="highlight"><pre><span></span><span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">combined_map</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">combined_map</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1370,7 +1370,7 @@
 <span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="k">return</span> <span class="n">conn</span>
 
-<span class="ne">NewConnectionError</span>: &lt;urllib3.connection.HTTPSConnection object at 0x1365b3d90&gt;: Failed to establish a new connection: [Errno 60] Operation timed out
+<span class="ne">NewConnectionError</span>: &lt;urllib3.connection.HTTPSConnection object at 0x13baf3790&gt;: Failed to establish a new connection: [Errno 60] Operation timed out
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -1404,13 +1404,13 @@
 <span class="ne">--&gt; </span><span class="mi">592</span>     <span class="k">raise</span> <span class="n">MaxRetryError</span><span class="p">(</span><span class="n">_pool</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">error</span> <span class="ow">or</span> <span class="n">ResponseError</span><span class="p">(</span><span class="n">cause</span><span class="p">))</span>
 <span class="g g-Whitespace">    </span><span class="mi">594</span> <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"Incremented Retry for (url='</span><span class="si">%s</span><span class="s2">'): </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">new_retry</span><span class="p">)</span>
 
-<span class="ne">MaxRetryError</span>: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/8/35/81.png (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x1365b3d90&gt;: Failed to establish a new connection: [Errno 60] Operation timed out'))
+<span class="ne">MaxRetryError</span>: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x13baf3790&gt;: Failed to establish a new connection: [Errno 60] Operation timed out'))
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ConnectionError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
 <span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">combined_map</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">combined_map</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 
 <span class="nn">File ~/venvs/finance/lib/python3.9/site-packages/contextily/plotting.py:121,</span> in <span class="ni">add_basemap</span><span class="nt">(ax, zoom, source, interpolation, attribution, attribution_size, reset_extent, crs, resampling, **extra_imshow_args)</span>
 <span class="g g-Whitespace">    </span><span class="mi">117</span>     <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="n">_reproj_bb</span><span class="p">(</span>
@@ -1511,7 +1511,7 @@
 <span class="g g-Whitespace">    </span><span class="mi">521</span> <span class="k">except</span> <span class="n">ClosedPoolError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">522</span>     <span class="k">raise</span> <span class="ne">ConnectionError</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">)</span>
 
-<span class="ne">ConnectionError</span>: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/8/35/81.png (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x1365b3d90&gt;: Failed to establish a new connection: [Errno 60] Operation timed out'))
+<span class="ne">ConnectionError</span>: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x13baf3790&gt;: Failed to establish a new connection: [Errno 60] Operation timed out'))
 </pre></div>
 </div>
 </div>

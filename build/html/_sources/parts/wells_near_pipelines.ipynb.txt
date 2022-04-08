@@ -1045,7 +1045,7 @@
     }
    ],
    "source": [
-    "cx.add_basemap(combined_map, zoom=8)\n"
+    "cx.add_basemap(combined_map, zoom=7)\n"
    ]
   },
   {

@@ -169,7 +169,7 @@ combined_map = wells_df.plot(ax = pipeline_map, alpha=0.5, figsize = (20,20), ed
 # In[16]:
 
 
-cx.add_basemap(combined_map, zoom=8)
+cx.add_basemap(combined_map, zoom=7)
 
 
 # ## Pipeline and Potential Carbon Storage Well Map
