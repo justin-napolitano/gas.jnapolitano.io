@@ -5,12 +5,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Identifying Wells Near Pipelines" />
+  <meta property="og:title" content="Potential Carbon Storage Wells Near Pipelines" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="parts/wells_near_pipelines.html" />
   <meta property="og:description" content="Import and Procedural Functions: Query Plan: Restrictions: Must be near a pipeline terminal. Imports: Pipeline Data, Well Data. Filtering: For each well calculate nearest pipeline, For each well ca..." />
   
-    <title>Identifying Wells Near Pipelines &#8212; energy.jnapolitano.io</title>
+    <title>Potential Carbon Storage Wells Near Pipelines &#8212; energy.jnapolitano.io</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -59,7 +59,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Contact Justin Napolitano" href="contact/index.html" />
-    <link rel="prev" title="Identifying Potential Carbon Storage Facilities Near Import/Export Ports" href="port-wells.html" /> 
+    <link rel="prev" title="Potential Carbon Storage Facilities Near Import/Export Ports" href="port-wells.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -157,8 +157,33 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="power_plants.html">
-   US Power Plants Meta Analysis
+  <a class="reference internal" href="natural-gas-plants.html">
+   Natural Gas Plants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="coal-plants.html">
+   Coal Plants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wind-plants.html">
+   Wind Plants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="solar-plants.html">
+   Solar Plants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hydro-plants.html">
+   Hydro Plants
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="nuclear-plants.html">
+   Nuclear Plants
   </a>
  </li>
 </ul>
@@ -169,8 +194,23 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="natural_gas.html">
-   US Natural Gas Network Overview
+  <a class="reference internal" href="gas-fields.html">
+   US Gas and Oil Fields
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="natural-gas-facilities.html">
+   Natural Gas Storage Facilities
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="natural-gas-pipelines.html">
+   Natural Gas Pipelines
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="natural-gas-market-hubs.html">
+   Natural Gas Market Hubs
   </a>
  </li>
 </ul>
@@ -181,18 +221,13 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="non-active-wells.html">
-   Identifying Potential Carbon Storage Facilities
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="port-wells.html">
-   Identifying Potential Carbon Storage Facilities Near Import/Export Ports
+   Potential Carbon Storage Facilities Near Import/Export Ports
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Identifying Wells Near Pipelines
+   Potential Carbon Storage Wells Near Pipelines
   </a>
  </li>
 </ul>
@@ -369,17 +404,17 @@
      Adding a Distance Km Column
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#wells-base-map">
-     Wells Base Map
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pipelines-base-map">
-     Pipelines Base Map
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wells-base-map">
+   Wells Base Map
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pipelines-base-map">
+   Pipelines Base Map
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pipeline-and-potential-carbon-storage-well-map">
@@ -396,7 +431,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Identifying Wells Near Pipelines</h1>
+                <h1>Potential Carbon Storage Wells Near Pipelines</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -472,17 +507,17 @@
      Adding a Distance Km Column
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#wells-base-map">
-     Wells Base Map
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pipelines-base-map">
-     Pipelines Base Map
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wells-base-map">
+   Wells Base Map
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pipelines-base-map">
+   Pipelines Base Map
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pipeline-and-potential-carbon-storage-well-map">
@@ -497,8 +532,8 @@
             </div>
             
               <div>
-                 <div class="tex2jax_ignore mathjax_ignore section" id="identifying-wells-near-pipelines">
-<h1>Identifying Wells Near Pipelines<a class="headerlink" href="#identifying-wells-near-pipelines" title="Permalink to this headline">¶</a>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="potential-carbon-storage-wells-near-pipelines">
+<h1>Potential Carbon Storage Wells Near Pipelines<a class="headerlink" href="#potential-carbon-storage-wells-near-pipelines" title="Permalink to this headline">¶</a>
 </h1>
 <div class="section" id="import-and-procedural-functions">
 <h2>Import and Procedural Functions<a class="headerlink" href="#import-and-procedural-functions" title="Permalink to this headline">¶</a>
@@ -1248,14 +1283,15 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="wells-base-map">
-<h3>Wells Base Map<a class="headerlink" href="#wells-base-map" title="Permalink to this headline">¶</a>
-</h3>
+<h2>Wells Base Map<a class="headerlink" href="#wells-base-map" title="Permalink to this headline">¶</a>
+</h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate">
 <div class="highlight"><pre><span></span><span class="n">well_map_ax</span> <span class="o">=</span> <span class="n">filtered_wells</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mf">.5</span><span class="p">)</span>
-
+<span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">well_map_ax</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="c1">#filtered_wells.plot()</span>
 </pre></div>
 </div>
@@ -1266,13 +1302,13 @@
 </div>
 </div>
 <div class="section" id="pipelines-base-map">
-<h3>Pipelines Base Map<a class="headerlink" href="#pipelines-base-map" title="Permalink to this headline">¶</a>
-</h3>
+<h2>Pipelines Base Map<a class="headerlink" href="#pipelines-base-map" title="Permalink to this headline">¶</a>
+</h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate">
 <div class="highlight"><pre><span></span><span class="n">pipeline_map</span> <span class="o">=</span> <span class="n">pipeline_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,)</span>
-<span class="c1">#map = cx.add_basemap(map, zoom=6)</span>
+<span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">pipeline_map</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1280,6 +1316,10 @@
 <img alt="../_images/wells_near_pipelines_25_0.png" src="../_images/wells_near_pipelines_25_0.png">
 </div>
 </div>
+</div>
+<div class="section" id="pipeline-and-potential-carbon-storage-well-map">
+<h2>Pipeline and Potential Carbon Storage Well Map<a class="headerlink" href="#pipeline-and-potential-carbon-storage-well-map" title="Permalink to this headline">¶</a>
+</h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate">
@@ -1300,31 +1340,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate">
-<div class="highlight"><pre><span></span><span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">combined_map</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate">
-<div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="pipeline-and-potential-carbon-storage-well-map">
-<h2>Pipeline and Potential Carbon Storage Well Map<a class="headerlink" href="#pipeline-and-potential-carbon-storage-well-map" title="Permalink to this headline">¶</a>
-</h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate">
 <div class="highlight"><pre><span></span><span class="n">combined_map</span><span class="o">.</span><span class="n">figure</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/wells_near_pipelines_29_0.png" src="../_images/wells_near_pipelines_29_0.png">
+<img alt="../_images/wells_near_pipelines_28_0.png" src="../_images/wells_near_pipelines_28_0.png">
 </div>
 </div>
 </div>
@@ -1365,7 +1386,7 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Identifying Potential Carbon Storage Facilities Near Import/Export Ports</p>
+            <p class="prev-next-title">Potential Carbon Storage Facilities Near Import/Export Ports</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="contact/index.html" title="next page">
@@ -1385,7 +1406,7 @@
       By Justin Napolitano<br/>
     
         &copy; Copyright 2022, Justin Napolitano.<br/>
-      Last updated on Apr 07, 2022.<br/>
+      Last updated on Apr 08, 2022.<br/>
   </p>
 </footer>
 </main>
