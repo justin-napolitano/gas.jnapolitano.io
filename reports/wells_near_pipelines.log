@@ -23,28 +23,6 @@ cx.add_basemap(combined_map, zoom=7)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTimeoutError[0m                              Traceback (most recent call last)
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connection.py:174[0m, in [0;36mHTTPConnection._new_conn[0;34m(self)[0m
-[1;32m    173[0m [38;5;28;01mtry[39;00m:
-[0;32m--> 174[0m     conn [38;5;241m=[39m [43mconnection[49m[38;5;241;43m.[39;49m[43mcreate_connection[49m[43m([49m
-[1;32m    175[0m [43m        [49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_dns_host[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mport[49m[43m)[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mtimeout[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mextra_kw[49m
-[1;32m    176[0m [43m    [49m[43m)[49m
-[1;32m    178[0m [38;5;28;01mexcept[39;00m SocketTimeout:
-
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/connection.py:95[0m, in [0;36mcreate_connection[0;34m(address, timeout, source_address, socket_options)[0m
-[1;32m     94[0m [38;5;28;01mif[39;00m err [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
-[0;32m---> 95[0m     [38;5;28;01mraise[39;00m err
-[1;32m     97[0m [38;5;28;01mraise[39;00m socket[38;5;241m.[39merror([38;5;124m"[39m[38;5;124mgetaddrinfo returns an empty list[39m[38;5;124m"[39m)
-
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/connection.py:85[0m, in [0;36mcreate_connection[0;34m(address, timeout, source_address, socket_options)[0m
-[1;32m     84[0m     sock[38;5;241m.[39mbind(source_address)
-[0;32m---> 85[0m [43msock[49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43msa[49m[43m)[49m
-[1;32m     86[0m [38;5;28;01mreturn[39;00m sock
-
-[0;31mTimeoutError[0m: [Errno 60] Operation timed out
-
-During handling of the above exception, another exception occurred:
-
-[0;31mNewConnectionError[0m                        Traceback (most recent call last)
 File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connectionpool.py:703[0m, in [0;36mHTTPConnectionPool.urlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
 [1;32m    702[0m [38;5;66;03m# Make the request on the httplib connection object.[39;00m
 [0;32m--> 703[0m httplib_response [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_request[49m[43m([49m
@@ -72,24 +50,68 @@ File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connectionpool.p
 [0;32m-> 1040[0m     [43mconn[49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43m)[49m
 [1;32m   1042[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m conn[38;5;241m.[39mis_verified:
 
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connection.py:358[0m, in [0;36mHTTPSConnection.connect[0;34m(self)[0m
-[1;32m    356[0m [38;5;28;01mdef[39;00m [38;5;21mconnect[39m([38;5;28mself[39m):
-[1;32m    357[0m     [38;5;66;03m# Add certificate verification[39;00m
-[0;32m--> 358[0m     conn [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_new_conn[49m[43m([49m[43m)[49m
-[1;32m    359[0m     hostname [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhost
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connection.py:416[0m, in [0;36mHTTPSConnection.connect[0;34m(self)[0m
+[1;32m    414[0m     context[38;5;241m.[39mload_default_certs()
+[0;32m--> 416[0m [38;5;28mself[39m[38;5;241m.[39msock [38;5;241m=[39m [43mssl_wrap_socket[49m[43m([49m
+[1;32m    417[0m [43m    [49m[43msock[49m[38;5;241;43m=[39;49m[43mconn[49m[43m,[49m
+[1;32m    418[0m [43m    [49m[43mkeyfile[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mkey_file[49m[43m,[49m
+[1;32m    419[0m [43m    [49m[43mcertfile[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcert_file[49m[43m,[49m
+[1;32m    420[0m [43m    [49m[43mkey_password[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mkey_password[49m[43m,[49m
+[1;32m    421[0m [43m    [49m[43mca_certs[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mca_certs[49m[43m,[49m
+[1;32m    422[0m [43m    [49m[43mca_cert_dir[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mca_cert_dir[49m[43m,[49m
+[1;32m    423[0m [43m    [49m[43mca_cert_data[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mca_cert_data[49m[43m,[49m
+[1;32m    424[0m [43m    [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m[43m,[49m
+[1;32m    425[0m [43m    [49m[43mssl_context[49m[38;5;241;43m=[39;49m[43mcontext[49m[43m,[49m
+[1;32m    426[0m [43m    [49m[43mtls_in_tls[49m[38;5;241;43m=[39;49m[43mtls_in_tls[49m[43m,[49m
+[1;32m    427[0m [43m[49m[43m)[49m
+[1;32m    429[0m [38;5;66;03m# If we're using all defaults and the connection[39;00m
+[1;32m    430[0m [38;5;66;03m# is TLSv1 or TLSv1.1 we throw a DeprecationWarning[39;00m
+[1;32m    431[0m [38;5;66;03m# for the host.[39;00m
 
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connection.py:186[0m, in [0;36mHTTPConnection._new_conn[0;34m(self)[0m
-[1;32m    185[0m [38;5;28;01mexcept[39;00m SocketError [38;5;28;01mas[39;00m e:
-[0;32m--> 186[0m     [38;5;28;01mraise[39;00m NewConnectionError(
-[1;32m    187[0m         [38;5;28mself[39m, [38;5;124m"[39m[38;5;124mFailed to establish a new connection: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m e
-[1;32m    188[0m     )
-[1;32m    190[0m [38;5;28;01mreturn[39;00m conn
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/ssl_.py:449[0m, in [0;36mssl_wrap_socket[0;34m(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data, tls_in_tls)[0m
+[1;32m    448[0m [38;5;28;01mif[39;00m send_sni:
+[0;32m--> 449[0m     ssl_sock [38;5;241m=[39m [43m_ssl_wrap_socket_impl[49m[43m([49m
+[1;32m    450[0m [43m        [49m[43msock[49m[43m,[49m[43m [49m[43mcontext[49m[43m,[49m[43m [49m[43mtls_in_tls[49m[43m,[49m[43m [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m
+[1;32m    451[0m [43m    [49m[43m)[49m
+[1;32m    452[0m [38;5;28;01melse[39;00m:
 
-[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/ssl_.py:493[0m, in [0;36m_ssl_wrap_socket_impl[0;34m(sock, ssl_context, tls_in_tls, server_hostname)[0m
+[1;32m    492[0m [38;5;28;01mif[39;00m server_hostname:
+[0;32m--> 493[0m     [38;5;28;01mreturn[39;00m [43mssl_context[49m[38;5;241;43m.[39;49m[43mwrap_socket[49m[43m([49m[43msock[49m[43m,[49m[43m [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m[43m)[49m
+[1;32m    494[0m [38;5;28;01melse[39;00m:
+
+File [0;32m/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py:500[0m, in [0;36mSSLContext.wrap_socket[0;34m(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)[0m
+[1;32m    494[0m [38;5;28;01mdef[39;00m [38;5;21mwrap_socket[39m([38;5;28mself[39m, sock, server_side[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m    495[0m                 do_handshake_on_connect[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[1;32m    496[0m                 suppress_ragged_eofs[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[1;32m    497[0m                 server_hostname[38;5;241m=[39m[38;5;28;01mNone[39;00m, session[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m    498[0m     [38;5;66;03m# SSLSocket class handles server_hostname encoding before it calls[39;00m
+[1;32m    499[0m     [38;5;66;03m# ctx._wrap_socket()[39;00m
+[0;32m--> 500[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msslsocket_class[49m[38;5;241;43m.[39;49m[43m_create[49m[43m([49m
+[1;32m    501[0m [43m        [49m[43msock[49m[38;5;241;43m=[39;49m[43msock[49m[43m,[49m
+[1;32m    502[0m [43m        [49m[43mserver_side[49m[38;5;241;43m=[39;49m[43mserver_side[49m[43m,[49m
+[1;32m    503[0m [43m        [49m[43mdo_handshake_on_connect[49m[38;5;241;43m=[39;49m[43mdo_handshake_on_connect[49m[43m,[49m
+[1;32m    504[0m [43m        [49m[43msuppress_ragged_eofs[49m[38;5;241;43m=[39;49m[43msuppress_ragged_eofs[49m[43m,[49m
+[1;32m    505[0m [43m        [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m[43m,[49m
+[1;32m    506[0m [43m        [49m[43mcontext[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m
+[1;32m    507[0m [43m        [49m[43msession[49m[38;5;241;43m=[39;49m[43msession[49m
+[1;32m    508[0m [43m    [49m[43m)[49m
+
+File [0;32m/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py:1040[0m, in [0;36mSSLSocket._create[0;34m(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)[0m
+[1;32m   1039[0m             [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mdo_handshake_on_connect should not be specified for non-blocking sockets[39m[38;5;124m"[39m)
+[0;32m-> 1040[0m         [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdo_handshake[49m[43m([49m[43m)[49m
+[1;32m   1041[0m [38;5;28;01mexcept[39;00m ([38;5;167;01mOSError[39;00m, [38;5;167;01mValueError[39;00m):
+
+File [0;32m/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py:1309[0m, in [0;36mSSLSocket.do_handshake[0;34m(self, block)[0m
+[1;32m   1308[0m         [38;5;28mself[39m[38;5;241m.[39msettimeout([38;5;28;01mNone[39;00m)
+[0;32m-> 1309[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_sslobj[49m[38;5;241;43m.[39;49m[43mdo_handshake[49m[43m([49m[43m)[49m
+[1;32m   1310[0m [38;5;28;01mfinally[39;00m:
+
+[0;31mTimeoutError[0m: [Errno 60] Operation timed out
 
 During handling of the above exception, another exception occurred:
 
-[0;31mMaxRetryError[0m                             Traceback (most recent call last)
+[0;31mProtocolError[0m                             Traceback (most recent call last)
 File [0;32m~/venvs/finance/lib/python3.9/site-packages/requests/adapters.py:440[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
 [1;32m    439[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m chunked:
 [0;32m--> 440[0m     resp [38;5;241m=[39m [43mconn[49m[38;5;241;43m.[39;49m[43murlopen[49m[43m([49m
@@ -114,12 +136,101 @@ File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connectionpool.p
 [1;32m    787[0m [43m[49m[43m)[49m
 [1;32m    788[0m retries[38;5;241m.[39msleep()
 
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/retry.py:592[0m, in [0;36mRetry.increment[0;34m(self, method, url, response, error, _pool, _stacktrace)[0m
-[1;32m    591[0m [38;5;28;01mif[39;00m new_retry[38;5;241m.[39mis_exhausted():
-[0;32m--> 592[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, error [38;5;129;01mor[39;00m ResponseError(cause))
-[1;32m    594[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/retry.py:550[0m, in [0;36mRetry.increment[0;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[1;32m    549[0m [38;5;28;01mif[39;00m read [38;5;129;01mis[39;00m [38;5;28;01mFalse[39;00m [38;5;129;01mor[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_is_method_retryable(method):
+[0;32m--> 550[0m     [38;5;28;01mraise[39;00m [43msix[49m[38;5;241;43m.[39;49m[43mreraise[49m[43m([49m[38;5;28;43mtype[39;49m[43m([49m[43merror[49m[43m)[49m[43m,[49m[43m [49m[43merror[49m[43m,[49m[43m [49m[43m_stacktrace[49m[43m)[49m
+[1;32m    551[0m [38;5;28;01melif[39;00m read [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
 
-[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out'))
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/packages/six.py:769[0m, in [0;36mreraise[0;34m(tp, value, tb)[0m
+[1;32m    768[0m [38;5;28;01mif[39;00m value[38;5;241m.[39m__traceback__ [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m tb:
+[0;32m--> 769[0m     [38;5;28;01mraise[39;00m value[38;5;241m.[39mwith_traceback(tb)
+[1;32m    770[0m [38;5;28;01mraise[39;00m value
+
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connectionpool.py:703[0m, in [0;36mHTTPConnectionPool.urlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    702[0m [38;5;66;03m# Make the request on the httplib connection object.[39;00m
+[0;32m--> 703[0m httplib_response [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_request[49m[43m([49m
+[1;32m    704[0m [43m    [49m[43mconn[49m[43m,[49m
+[1;32m    705[0m [43m    [49m[43mmethod[49m[43m,[49m
+[1;32m    706[0m [43m    [49m[43murl[49m[43m,[49m
+[1;32m    707[0m [43m    [49m[43mtimeout[49m[38;5;241;43m=[39;49m[43mtimeout_obj[49m[43m,[49m
+[1;32m    708[0m [43m    [49m[43mbody[49m[38;5;241;43m=[39;49m[43mbody[49m[43m,[49m
+[1;32m    709[0m [43m    [49m[43mheaders[49m[38;5;241;43m=[39;49m[43mheaders[49m[43m,[49m
+[1;32m    710[0m [43m    [49m[43mchunked[49m[38;5;241;43m=[39;49m[43mchunked[49m[43m,[49m
+[1;32m    711[0m [43m[49m[43m)[49m
+[1;32m    713[0m [38;5;66;03m# If we're going to release the connection in ``finally:``, then[39;00m
+[1;32m    714[0m [38;5;66;03m# the response doesn't need to know about the connection. Otherwise[39;00m
+[1;32m    715[0m [38;5;66;03m# it will also try to release it and we'll have a double-release[39;00m
+[1;32m    716[0m [38;5;66;03m# mess.[39;00m
+
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connectionpool.py:386[0m, in [0;36mHTTPConnectionPool._make_request[0;34m(self, conn, method, url, timeout, chunked, **httplib_request_kw)[0m
+[1;32m    385[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 386[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_validate_conn[49m[43m([49m[43mconn[49m[43m)[49m
+[1;32m    387[0m [38;5;28;01mexcept[39;00m (SocketTimeout, BaseSSLError) [38;5;28;01mas[39;00m e:
+[1;32m    388[0m     [38;5;66;03m# Py2 raises this as a BaseSSLError, Py3 raises it as socket timeout.[39;00m
+
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connectionpool.py:1040[0m, in [0;36mHTTPSConnectionPool._validate_conn[0;34m(self, conn)[0m
+[1;32m   1039[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mgetattr[39m(conn, [38;5;124m"[39m[38;5;124msock[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m):  [38;5;66;03m# AppEngine might not have  `.sock`[39;00m
+[0;32m-> 1040[0m     [43mconn[49m[38;5;241;43m.[39;49m[43mconnect[49m[43m([49m[43m)[49m
+[1;32m   1042[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m conn[38;5;241m.[39mis_verified:
+
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/connection.py:416[0m, in [0;36mHTTPSConnection.connect[0;34m(self)[0m
+[1;32m    414[0m     context[38;5;241m.[39mload_default_certs()
+[0;32m--> 416[0m [38;5;28mself[39m[38;5;241m.[39msock [38;5;241m=[39m [43mssl_wrap_socket[49m[43m([49m
+[1;32m    417[0m [43m    [49m[43msock[49m[38;5;241;43m=[39;49m[43mconn[49m[43m,[49m
+[1;32m    418[0m [43m    [49m[43mkeyfile[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mkey_file[49m[43m,[49m
+[1;32m    419[0m [43m    [49m[43mcertfile[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcert_file[49m[43m,[49m
+[1;32m    420[0m [43m    [49m[43mkey_password[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mkey_password[49m[43m,[49m
+[1;32m    421[0m [43m    [49m[43mca_certs[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mca_certs[49m[43m,[49m
+[1;32m    422[0m [43m    [49m[43mca_cert_dir[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mca_cert_dir[49m[43m,[49m
+[1;32m    423[0m [43m    [49m[43mca_cert_data[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mca_cert_data[49m[43m,[49m
+[1;32m    424[0m [43m    [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m[43m,[49m
+[1;32m    425[0m [43m    [49m[43mssl_context[49m[38;5;241;43m=[39;49m[43mcontext[49m[43m,[49m
+[1;32m    426[0m [43m    [49m[43mtls_in_tls[49m[38;5;241;43m=[39;49m[43mtls_in_tls[49m[43m,[49m
+[1;32m    427[0m [43m[49m[43m)[49m
+[1;32m    429[0m [38;5;66;03m# If we're using all defaults and the connection[39;00m
+[1;32m    430[0m [38;5;66;03m# is TLSv1 or TLSv1.1 we throw a DeprecationWarning[39;00m
+[1;32m    431[0m [38;5;66;03m# for the host.[39;00m
+
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/ssl_.py:449[0m, in [0;36mssl_wrap_socket[0;34m(sock, keyfile, certfile, cert_reqs, ca_certs, server_hostname, ssl_version, ciphers, ssl_context, ca_cert_dir, key_password, ca_cert_data, tls_in_tls)[0m
+[1;32m    448[0m [38;5;28;01mif[39;00m send_sni:
+[0;32m--> 449[0m     ssl_sock [38;5;241m=[39m [43m_ssl_wrap_socket_impl[49m[43m([49m
+[1;32m    450[0m [43m        [49m[43msock[49m[43m,[49m[43m [49m[43mcontext[49m[43m,[49m[43m [49m[43mtls_in_tls[49m[43m,[49m[43m [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m
+[1;32m    451[0m [43m    [49m[43m)[49m
+[1;32m    452[0m [38;5;28;01melse[39;00m:
+
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/urllib3/util/ssl_.py:493[0m, in [0;36m_ssl_wrap_socket_impl[0;34m(sock, ssl_context, tls_in_tls, server_hostname)[0m
+[1;32m    492[0m [38;5;28;01mif[39;00m server_hostname:
+[0;32m--> 493[0m     [38;5;28;01mreturn[39;00m [43mssl_context[49m[38;5;241;43m.[39;49m[43mwrap_socket[49m[43m([49m[43msock[49m[43m,[49m[43m [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m[43m)[49m
+[1;32m    494[0m [38;5;28;01melse[39;00m:
+
+File [0;32m/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py:500[0m, in [0;36mSSLContext.wrap_socket[0;34m(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)[0m
+[1;32m    494[0m [38;5;28;01mdef[39;00m [38;5;21mwrap_socket[39m([38;5;28mself[39m, sock, server_side[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m    495[0m                 do_handshake_on_connect[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[1;32m    496[0m                 suppress_ragged_eofs[38;5;241m=[39m[38;5;28;01mTrue[39;00m,
+[1;32m    497[0m                 server_hostname[38;5;241m=[39m[38;5;28;01mNone[39;00m, session[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m    498[0m     [38;5;66;03m# SSLSocket class handles server_hostname encoding before it calls[39;00m
+[1;32m    499[0m     [38;5;66;03m# ctx._wrap_socket()[39;00m
+[0;32m--> 500[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43msslsocket_class[49m[38;5;241;43m.[39;49m[43m_create[49m[43m([49m
+[1;32m    501[0m [43m        [49m[43msock[49m[38;5;241;43m=[39;49m[43msock[49m[43m,[49m
+[1;32m    502[0m [43m        [49m[43mserver_side[49m[38;5;241;43m=[39;49m[43mserver_side[49m[43m,[49m
+[1;32m    503[0m [43m        [49m[43mdo_handshake_on_connect[49m[38;5;241;43m=[39;49m[43mdo_handshake_on_connect[49m[43m,[49m
+[1;32m    504[0m [43m        [49m[43msuppress_ragged_eofs[49m[38;5;241;43m=[39;49m[43msuppress_ragged_eofs[49m[43m,[49m
+[1;32m    505[0m [43m        [49m[43mserver_hostname[49m[38;5;241;43m=[39;49m[43mserver_hostname[49m[43m,[49m
+[1;32m    506[0m [43m        [49m[43mcontext[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[43m,[49m
+[1;32m    507[0m [43m        [49m[43msession[49m[38;5;241;43m=[39;49m[43msession[49m
+[1;32m    508[0m [43m    [49m[43m)[49m
+
+File [0;32m/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py:1040[0m, in [0;36mSSLSocket._create[0;34m(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)[0m
+[1;32m   1039[0m             [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mdo_handshake_on_connect should not be specified for non-blocking sockets[39m[38;5;124m"[39m)
+[0;32m-> 1040[0m         [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdo_handshake[49m[43m([49m[43m)[49m
+[1;32m   1041[0m [38;5;28;01mexcept[39;00m ([38;5;167;01mOSError[39;00m, [38;5;167;01mValueError[39;00m):
+
+File [0;32m/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ssl.py:1309[0m, in [0;36mSSLSocket.do_handshake[0;34m(self, block)[0m
+[1;32m   1308[0m         [38;5;28mself[39m[38;5;241m.[39msettimeout([38;5;28;01mNone[39;00m)
+[0;32m-> 1309[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_sslobj[49m[38;5;241;43m.[39;49m[43mdo_handshake[49m[43m([49m[43m)[49m
+[1;32m   1310[0m [38;5;28;01mfinally[39;00m:
+
+[0;31mProtocolError[0m: ('Connection aborted.', TimeoutError(60, 'Operation timed out'))
 
 During handling of the above exception, another exception occurred:
 
@@ -218,14 +329,14 @@ File [0;32m~/venvs/finance/lib/python3.9/site-packages/requests/sessions.py:645
 [1;32m    647[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
 [1;32m    648[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
 
-File [0;32m~/venvs/finance/lib/python3.9/site-packages/requests/adapters.py:519[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
-[1;32m    515[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e[38;5;241m.[39mreason, _SSLError):
-[1;32m    516[0m         [38;5;66;03m# This branch is for urllib3 v1.22 and later.[39;00m
-[1;32m    517[0m         [38;5;28;01mraise[39;00m SSLError(e, request[38;5;241m=[39mrequest)
-[0;32m--> 519[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
-[1;32m    521[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
-[1;32m    522[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+File [0;32m~/venvs/finance/lib/python3.9/site-packages/requests/adapters.py:501[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    498[0m             [38;5;28;01mraise[39;00m
+[1;32m    500[0m [38;5;28;01mexcept[39;00m (ProtocolError, socket[38;5;241m.[39merror) [38;5;28;01mas[39;00m err:
+[0;32m--> 501[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(err, request[38;5;241m=[39mrequest)
+[1;32m    503[0m [38;5;28;01mexcept[39;00m MaxRetryError [38;5;28;01mas[39;00m e:
+[1;32m    504[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e[38;5;241m.[39mreason, ConnectTimeoutError):
+[1;32m    505[0m         [38;5;66;03m# TODO: Remove this in 3.0.0: see #2811[39;00m
 
-[0;31mConnectionError[0m: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out'))
-ConnectionError: HTTPSConnectionPool(host='stamen-tiles-a.a.ssl.fastly.net', port=443): Max retries exceeded with url: /terrain/7/13/36.png (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x13baf3790>: Failed to establish a new connection: [Errno 60] Operation timed out'))
+[0;31mConnectionError[0m: ('Connection aborted.', TimeoutError(60, 'Operation timed out'))
+ConnectionError: ('Connection aborted.', TimeoutError(60, 'Operation timed out'))
 
