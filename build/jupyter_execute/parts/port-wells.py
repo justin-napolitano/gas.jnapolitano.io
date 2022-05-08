@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Identifying Potential Carbon Storage Facilities Near Import/Export Ports
+# # Potential Carbon Storage Facilities Near Import/Export Ports
 
 # ## Import and Procedural Functions
 
@@ -93,7 +93,7 @@ terminal_df.columns
 terminal_map =terminal_df.explore(
     column="TYPE", # make choropleth based on "PORT_NAME" column
      popup=True, # show all values in popup (on click)
-     tiles="CartoDB positron", # use "CartoDB positron" tiles
+     tiles="Stamen Terrain", # use "CartoDB positron" tiles
      cmap='Set1', # use "Set1" matplotlib colormap
      #style_kwds=dict(color="black"),
      marker_kwds= dict(radius=6),
@@ -201,7 +201,7 @@ filtered_wells.describe()
 filtered_wells.explore(
     column="STATUS_left", # make choropleth based on "PORT_NAME" column
      popup=True, # show all values in popup (on click)
-     tiles="CartoDB positron", # use "CartoDB positron" tiles
+     tiles="Stamen Terrain", # use "CartoDB positron" tiles
      cmap='Set1', # use "Set1" matplotlib colormap
      #style_kwds=dict(color="black"),
      marker_kwds= dict(radius=6),

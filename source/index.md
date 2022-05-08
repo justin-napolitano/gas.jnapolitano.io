@@ -8,22 +8,6 @@ title: Justin Napolitano
 :::
 
 
-## Overview
-
-:::{raw} html
-
-    <hr style="height:1px;border-width:0;color:gray;background-color:gray">
-:::
-
-:::{card}
-
-```{toctree}
-:caption: Overview
-:maxdepth: 3
-
-parts/overview.md
-```
-:::
 
 ##  US Power Plants Overview
 
@@ -38,7 +22,13 @@ parts/overview.md
 :caption: Power Plants Overview
 :maxdepth: 3
 
-parts/power_plants.ipynb
+parts/natural-gas-plants
+parts/coal-plants
+parts/wind-plants
+parts/solar-plants
+parts/hydro-plants
+parts/nuclear-plants
+
 ```
 :::
 
@@ -55,7 +45,12 @@ parts/power_plants.ipynb
 :caption: Natural Gas Overview
 :maxdepth: 3
 
-parts/natural_gas.ipynb
+parts/gas-fields
+parts/natural-gas-facilities
+parts/natural-gas-pipelines
+parts/natural-gas-market-hubs
+parts/market-pipelines.ipynb
+
 ```
 :::
 
@@ -73,7 +68,6 @@ parts/natural_gas.ipynb
 :caption: Carbon Storage Facilities
 :maxdepth: 3
 
-parts/non-active-wells.ipynb
 parts/port-wells.ipynb
 parts/wells_near_pipelines.ipynb
 ```

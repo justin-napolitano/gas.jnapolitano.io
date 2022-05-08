@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Identifying Wells Near Pipelines
+# # Potential Carbon Storage Wells Near Pipelines
 
 # ## Import and Procedural Functions
 
@@ -138,24 +138,26 @@ filtered_wells = nearest_wells_df.loc[nearest_wells_df['distance_km'] < 2].copy(
 filtered_wells.describe()
 
 
-# ### Wells Base Map
+# ## Wells Base Map
 
 # In[13]:
 
 
 well_map_ax = filtered_wells.plot(figsize=(15, 15), alpha=0.5, edgecolor='k', markersize = .5)
-
+cx.add_basemap(well_map_ax, zoom=6)
 #filtered_wells.plot()
 
 
-# ### Pipelines Base Map
+# ## Pipelines Base Map
 
 # In[14]:
 
 
 pipeline_map = pipeline_df.plot(figsize = (15,15), alpha=0.5,)
-#map = cx.add_basemap(map, zoom=6)
+cx.add_basemap(pipeline_map, zoom=6)
 
+
+# ## Pipeline and Potential Carbon Storage Well Map
 
 # In[15]:
 
@@ -169,19 +171,5 @@ combined_map = wells_df.plot(ax = pipeline_map, alpha=0.5, figsize = (20,20), ed
 # In[16]:
 
 
-cx.add_basemap(combined_map, zoom=7)
-
-
-# ## Pipeline and Potential Carbon Storage Well Map
-
-# In[146]:
-
-
 combined_map.figure
-
-
-# In[ ]:
-
-
-
 

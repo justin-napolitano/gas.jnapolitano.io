@@ -76,10 +76,11 @@ extensions = [
 #jupyter_execute_notebooks = "auto"
 jupyter_execution_timeout= 100
 nbsphinx_timeout = 100
-timeout= 10000
+timeout= 1000000
 execution_timeout = -1
+execute_timeout = 100000
 #jupyter_execute_notebooks = "auto"
-jupyter_execute_notebooks = "auto"
+jupyter_execute_notebooks = "cache"
 #Cautodoc Setup
 
 cautodoc_root = os.path.abspath("codebase/project-c-reference")
