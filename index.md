@@ -1,12 +1,27 @@
 ---
-slug: "github-gas.jnapolitano.io"
-title: "gas.jnapolitano.io"
-repo: "justin-napolitano/gas.jnapolitano.io"
-githubUrl: "https://github.com/justin-napolitano/gas.jnapolitano.io"
-generatedAt: "2025-11-23T08:58:56.764430Z"
-source: "github-auto"
+slug: github-gas.jnapolitano.io
+title: 'gas.jnapolitano.io: Automated Build and Deployment for Energy Docs'
+repo: justin-napolitano/gas.jnapolitano.io
+githubUrl: https://github.com/justin-napolitano/gas.jnapolitano.io
+generatedAt: '2025-11-23T08:58:56.764430Z'
+source: github-auto
+summary: >-
+  Technical overview of gas.jnapolitano.io’s automated build, deployment, and backup system for US
+  energy infrastructure documentation site.
+tags:
+  - sphinx
+  - github-pages
+  - python
+  - automation
+  - documentation
+  - backup
+seoPrimaryKeyword: gas.jnapolitano.io
+seoSecondaryKeywords:
+  - build pipeline
+  - deployment automation
+  - energy documentation
+seoOptimized: true
 ---
-
 
 # gas.jnapolitano.io: Technical Overview and Implementation Details
 
