@@ -21,6 +21,12 @@ seoSecondaryKeywords:
   - deployment automation
   - energy documentation
 seoOptimized: true
+topicFamily: automation
+topicFamilyConfidence: 0.95
+topicFamilyNotes: >-
+  The post focuses heavily on scripts and tooling for automating build, deployment, and backup
+  workflows using Python, Bash, Makefile, and GitHub Pages. It aligns best with the 'automation'
+  category that emphasizes build and deployment automation.
 ---
 
 # gas.jnapolitano.io: Technical Overview and Implementation Details
@@ -71,3 +77,4 @@ Additional scripts like `label_list.py` parse Sphinx environment pickle files to
 ## Conclusion
 
 This repository exemplifies a pragmatic approach to managing a technical documentation site with automated build, deployment, and backup workflows. It leverages standard tools and scripting to maintain operational efficiency while supporting rich, data-driven content. Future improvements could focus on enhancing automation robustness, documentation clarity, and security practices.
+
