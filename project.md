@@ -1,21 +1,29 @@
 ---
 slug: github-gas-jnapolitano-io
 id: github-gas-jnapolitano-io
-title: gas.jnapolitano.io
+title: Automated Documentation and Deployment for Energy Site
 repo: justin-napolitano/gas.jnapolitano.io
 githubUrl: https://github.com/justin-napolitano/gas.jnapolitano.io
 generatedAt: '2025-11-24T21:34:50.462Z'
 source: github-auto
 summary: >-
-  This repository hosts the source and deployment scripts for the
-  energy.jnapolitano.io site, which provides detailed documentation and analysis
-  on US power plants, natural gas infrastructure, and carbon storage facilities.
-  It includes automated build, deployment, and backup tools to maintain the
-  site.
-tags: []
-seoPrimaryKeyword: ''
-seoSecondaryKeywords: []
-seoOptimized: false
+  Explore the setup and features of the energy.jnapolitano.io site, focusing on
+  automated documentation and deployment processes.
+tags:
+  - sphinx
+  - jupyter notebooks
+  - bash scripting
+  - dropbox api
+  - makefile
+  - python
+seoPrimaryKeyword: automated documentation deployment
+seoSecondaryKeywords:
+  - energy infrastructure documentation
+  - python deployment scripts
+  - backup with dropbox
+  - sphinx documentation builder
+  - jupyter content management
+seoOptimized: true
 topicFamily: null
 topicFamilyConfidence: null
 kind: project
