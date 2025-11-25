@@ -7,8 +7,8 @@ githubUrl: https://github.com/justin-napolitano/gas.jnapolitano.io
 generatedAt: '2025-11-24T21:34:50.462Z'
 source: github-auto
 summary: >-
-  Explore the setup and features of the energy.jnapolitano.io site, focusing on
-  automated documentation and deployment processes.
+  Explore the setup and automation of a documentation site focused on US energy
+  infrastructure using Python, Sphinx, and Bash.
 tags:
   - sphinx
   - jupyter notebooks
@@ -16,13 +16,19 @@ tags:
   - dropbox api
   - makefile
   - python
-seoPrimaryKeyword: automated documentation deployment
+  - bash
+  - jupyter
+  - dropbox
+  - documentation
+  - energy infrastructure
+seoPrimaryKeyword: energy documentation automation
 seoSecondaryKeywords:
-  - energy infrastructure documentation
-  - python deployment scripts
-  - backup with dropbox
   - sphinx documentation builder
-  - jupyter content management
+  - python backup scripts
+  - bash deployment scripts
+  - jupyter notebooks for documentation
+  - makefile automation
+  - US power plants analysis
 seoOptimized: true
 topicFamily: null
 topicFamilyConfidence: null
