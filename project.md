@@ -7,8 +7,8 @@ githubUrl: https://github.com/justin-napolitano/gas.jnapolitano.io
 generatedAt: '2025-11-24T21:34:50.462Z'
 source: github-auto
 summary: >-
-  Explore the setup and automation of a documentation site focused on US energy
-  infrastructure using Python, Sphinx, and Bash.
+  Explore the setup and automation of a documentation site focused on US energy infrastructure using
+  Python, Sphinx, and Bash.
 tags:
   - sphinx
   - jupyter notebooks
@@ -30,8 +30,8 @@ seoSecondaryKeywords:
   - makefile automation
   - US power plants analysis
 seoOptimized: true
-topicFamily: null
-topicFamilyConfidence: null
+topicFamily: automation
+topicFamilyConfidence: 0.9
 kind: project
 entryLayout: project
 showInProjects: true
@@ -145,4 +145,5 @@ uninstall.sh          # Script to uninstall or clean environment
 - Expand content coverage on energy infrastructure
 - Refactor and unify deployment scripts for consistency
 - Correct typos in filenames (e.g., `requirments.txt`)
+
 
