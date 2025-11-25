@@ -1,13 +1,13 @@
 ---
 slug: github-gas.jnapolitano.io
-title: 'gas.jnapolitano.io: Automated Build and Deployment for Energy Docs'
+title: Technical Overview of gas.jnapolitano.io Infrastructure
 repo: justin-napolitano/gas.jnapolitano.io
 githubUrl: https://github.com/justin-napolitano/gas.jnapolitano.io
 generatedAt: '2025-11-23T08:58:56.764430Z'
 source: github-auto
 summary: >-
-  Technical overview of gas.jnapolitano.io’s automated build, deployment, and backup system for US
-  energy infrastructure documentation site.
+  Explore the architecture and implementation of gas.jnapolitano.io, focusing on
+  automated build, deployment, and backup processes for energy documentation.
 tags:
   - sphinx
   - github-pages
@@ -15,18 +15,28 @@ tags:
   - automation
   - documentation
   - backup
-seoPrimaryKeyword: gas.jnapolitano.io
-seoSecondaryKeywords:
+  - jupyter
+  - gh-pages
+  - bash
+  - dropbox
   - build pipeline
-  - deployment automation
-  - energy documentation
+seoPrimaryKeyword: gas.jnapolitano.io infrastructure
+seoSecondaryKeywords:
+  - automated documentation site
+  - build and deployment automation
+  - energy infrastructure documentation
+  - sphinx configuration
+  - jupyter notebooks integration
 seoOptimized: true
 topicFamily: automation
 topicFamilyConfidence: 0.95
 topicFamilyNotes: >-
-  The post focuses heavily on scripts and tooling for automating build, deployment, and backup
-  workflows using Python, Bash, Makefile, and GitHub Pages. It aligns best with the 'automation'
-  category that emphasizes build and deployment automation.
+  The post focuses heavily on scripts and tooling for automating build,
+  deployment, and backup workflows using Python, Bash, Makefile, and GitHub
+  Pages. It aligns best with the 'automation' category that emphasizes build and
+  deployment automation.
+kind: project
+id: github-gas.jnapolitano.io
 ---
 
 # gas.jnapolitano.io: Technical Overview and Implementation Details
